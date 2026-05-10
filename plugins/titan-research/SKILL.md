@@ -246,6 +246,23 @@ wants to continue researching:
 
 Chain depth > 3 requires explicit user confirmation (diminishing returns likely).
 
+## Post-Research: Publish Prep (Optional)
+
+When a report transitions from internal/private to publicly published (via a
+paired research site), run a publish-prep pass before deploy. Goal: catch
+personalization and context-window assumptions that read fine internally but
+poorly to a fresh public reader.
+
+1. Load `references/publish-prep.md`
+2. Dispatch four lens sub-agents in parallel (personalization scrub,
+   context-assumption, continuity / fresh-eyes, light readability)
+3. Synthesize findings into `PUBLISH_PREP_<slug>_<date>.md` working artifact
+4. User reviews, applies edits to source (or wraps internal-only sections in
+   `<!-- public:hide -->` markers), redeploys, archives prep doc
+
+This phase is **optional** and **manual**. Only invoke when actually publishing
+publicly. Private direct-link sharing typically does not need it.
+
 ## Module Reference
 
 Load these on-demand when the corresponding phase activates:
@@ -259,6 +276,7 @@ Load these on-demand when the corresponding phase activates:
 | Emergence Protocol | Phase 0.5, 2, 4 (discovery) | `references/emergence-protocol.md` |
 | Report Standardization | Phase 4 (output formatting) | `references/report-standardization.md` |
 | Sequential Chaining | Post-research (multi-pass) | `references/sequential-chaining.md` |
+| Publish Prep | Post-research (publishing publicly via paired site) | `references/publish-prep.md` |
 | Meta-Analysis | Post-research (multi-report synthesis) | `references/meta-analysis.md` |
 | Discussion Documents | Post-report (extended Q&A) | `references/discussion-documents.md` |
 | Definitions & Concepts | Any phase (terminology) | `references/definitions-and-concepts.md` |
