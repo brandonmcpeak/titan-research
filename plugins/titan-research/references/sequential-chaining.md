@@ -11,6 +11,8 @@ note: >
   report-standardization, thinking-file, and discussion-documents modules.
 ---
 
+> **Scope distinction:** This module covers BETWEEN-run inheritance (Run N → Run N+1). For multi-phase research orchestration WITHIN a single run (Phase 1 dispatch → Phase 1 synthesis → scope-adjust → Phase 2 dispatch → master synthesis), see `multi-phase-protocol.md`. The master report (within-run cross-phase synthesis) is distinct from chained runs (between-run inheritance). The two can compose: a multi-phase Run 1 whose master report identifies gaps that justify a Run 2.
+
 # Sequential Research Chaining: Multi-Pass Protocol
 
 Defines how research runs build on each other. Transforms ad-hoc "do more

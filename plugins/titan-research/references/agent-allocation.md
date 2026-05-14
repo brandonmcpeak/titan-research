@@ -75,6 +75,19 @@ For each pillar in allocation:
 Orchestrator collects all agent outputs and synthesizes into the final report.
 Agents run in parallel; orchestrator waits for all to complete.
 
+#### Subagent Output Schema (Citation Discipline)
+
+Every subagent prompt MUST encode the following output discipline:
+
+- **Every claim gets an inline named cite** at the pillar level. Format: `[Source Title]`. NOT numbered at the pillar level — numbering happens at the orchestrator synthesis pass (see `report-standardization.md` Phase 2 → Citation Format Mapping).
+- **Pillar file ends with a `## Sources` numbered list** with URLs + dates, using the source-quality indicators from `report-standardization.md` Phase 2.
+- **Minimum source floor per pillar**: N specified in the brief; default N=5 for STANDARD validation, N=8 for HIGH, N=12 for PARANOID.
+- **Triangulation requirement**: claims marked HIGH-confidence must triangulate across ≥3 distinct source types (e.g., Academic + Industry + Practitioner) per the source-quality indicators.
+
+#### Wikilink Discipline (At Write-Time)
+
+Subagent prompts MUST also instruct the agent: when writing markdown files that reference OTHER markdown files inside the user's Obsidian vault (any path under `/Users/brandonmcpeak/GitHub & Projects/`), use Obsidian wikilink form `[[basename]]` or `[[path/to/basename]]` — NOT `[text](path.md)`. The vault has `alwaysUpdateLinks: true`, so wikilinks survive rename; markdown-style links break. Exceptions: external URLs (`https://...`) and targets outside the vault. See `SKILL.md` Phase 4 → Wikilink Discipline for the full rule.
+
 ### Claude.ai (Extended Search)
 
 Map pillars to sequential extended search allocations:

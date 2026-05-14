@@ -35,6 +35,7 @@ Detect execution environment and adapt:
 - Save all artifacts to filesystem with naming convention
 - Reports go to `resources/research/reports/`
 - Briefs go to `resources/research/briefs/`
+- **Multi-phase orchestration is Claude-Code-native.** When the brief structures research as 2+ dependent phases (Phase N+1 pillar scopes depend on Phase N findings), Claude Code is the right platform. See `references/multi-phase-protocol.md`. Claude.ai extended search is single-phase by design.
 
 **Claude.ai** (extended search available):
 - Use extended search tool for deep pillar research
@@ -224,6 +225,14 @@ source: titan-research
 
 **Post-report**: Update associated brief status to Research-Complete.
 See `references/report-standardization.md` Phase 4.
+
+### Wikilink Discipline
+
+When writing markdown files that reference OTHER markdown files inside the user's Obsidian vault (any path under `/Users/brandonmcpeak/GitHub & Projects/`), use Obsidian wikilink form `[[basename]]` or `[[path/to/basename]]`, NOT `[text](path.md)`. The vault has `alwaysUpdateLinks: true`, so wikilinks survive rename; markdown-style links break.
+
+Exceptions: external URLs (`https://...`), targets outside the vault, and explicitly-broken targets (a broken `[[wikilink]]` is invisible failure; keep the markdown form so the broken intent is visible).
+
+Applies at write-time, not post-write. Subagent prompts must include this discipline (see `references/agent-allocation.md` Platform-Specific Mapping → Claude Code → Wikilink Discipline).
 
 ## Phase 5: Meta-Check
 

@@ -25,6 +25,24 @@ RESEARCH_REPORT_topic-kebab-case_v1_YYYY-MM-DD.md
 
 Save reports to: `resources/research/reports/`
 
+For multi-phase runs (when `multi-phase-protocol.md` applies), use the parent run-dir pattern:
+
+```
+resources/research/reports/<topic-kebab>_run_<date>/
+├── README.md                                        # run index
+├── RESEARCH_REPORT_<topic>_master_v1_<date>.md      # master synthesis
+├── RESEARCH_REPORT_<topic>-ph1_v1_<date>.md         # Phase 1 synthesis
+├── RESEARCH_REPORT_<topic>-ph2_v1_<date>.md         # Phase 2 synthesis
+├── ph1/                                             # Phase 1 pillar companions
+│   ├── P1_<name>.md
+│   └── P2_<name>.md
+└── ph2/                                             # Phase 2 pillar companions
+    ├── P7_<name>.md
+    └── P8_<name>.md
+```
+
+For single-phase runs, keep the flat `reports/` structure above.
+
 ### YAML Front Matter
 
 ```yaml
@@ -47,6 +65,12 @@ source: titan-research
 - `status`: Active (current), Superseded (newer version exists), Archived
 
 ## Phase 2: Citation Architecture
+
+### Citation Format Mapping (Pillar → Synthesis)
+
+Pillar-level (subagent) outputs use named cites: `[Source Title]`. Synthesis-level (orchestrator) outputs convert to numbered cites: `[1][2][3]`. The Phase 4 synthesis pass MUST perform this conversion as part of building the Sources & Citations section.
+
+Rationale: named cites survive subagent independence and edit-time renumbering (a subagent doesn't need to coordinate numbering with peers); numbered cites give publication discipline and at-a-glance density readability at the synthesis layer.
 
 ### In-Text Citations
 
@@ -85,6 +109,15 @@ Source quality indicators (append where relevant):
 - `[Peer-Reviewed]`: academic papers, journal articles
 - `[Industry]`: reports from recognized firms (McKinsey, Gartner, etc.)
 - `[Practitioner]`: blog posts, conference talks, forum discussions
+
+### Inline Citation Propagation (Multi-Phase / Synthesis-Level)
+
+When the report is a synthesis over upstream pillar files (multi-phase orchestrator output, meta-analysis, or chained-run inheritance):
+
+1. The synthesis report MUST carry inline citations at the same density as the pillars. Each load-bearing claim traceable to a pillar finding must repeat the pillar's `[Source Title]` (or numbered) cite at the synthesis level.
+2. The synthesis report's `Sources & Citations` section MUST be a consolidated numbered list with URLs + dates, deduplicated across propagated cites. NOT a bare "see companion files" wikilink list.
+3. The companion-file wikilink list belongs in a separate "Further detail" or "Appendix" section, NOT under Sources.
+4. Citation density target: synthesis reports should carry ≥15 inline cites; master reports across multiple phases should carry ≥40.
 
 ## Phase 3: Research Success Report & Path Navigation
 
