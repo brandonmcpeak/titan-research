@@ -13,6 +13,8 @@ argument-hint: "[research topic or question]"
 
 # TITAN Research Protocol v2.0
 
+> **Note on file paths:** This protocol references companion files via `references/foo.md` form. If you are running Titan inside a Claude.ai project where the files are attached flat (no folder), and a referenced path does not resolve, search the project files for the basename instead (e.g., `references/thinking-file.md` → `thinking-file.md`). The path form is informational about the relationship between files, not a hard load contract.
+
 Intelligence amplification system. Transforms research from "Ask > Search > Summarize"
 into recursive, cumulative knowledge building. Optimizes for Return on Attention:
 maximum insight density, minimum noise.
