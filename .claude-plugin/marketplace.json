@@ -1,12 +1,15 @@
 {
-  "version": "1.0.0",
   "name": "brandonmcpeak",
+  "owner": {
+    "name": "Brandon McPeak",
+    "url": "https://brandonmcpeak.com"
+  },
   "description": "Brandon McPeak's personal Claude plugin marketplace",
   "plugins": [
     {
       "name": "titan-research",
-      "source": "brandonmcpeak/titan-research",
-      "path": "plugins/titan-research"
+      "source": "./plugins/titan-research",
+      "description": "Multi-phase deep research protocol for Claude Code. Decision-ready intelligence, not topic surveys."
     }
   ]
 }

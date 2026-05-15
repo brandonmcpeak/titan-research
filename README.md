@@ -23,7 +23,7 @@ Then invoke from any Claude Code session:
 
 Titan spawns N parallel "pillar" subagents per phase, synthesizes their outputs, then adjusts pillar scope before the next phase runs. A two-pass publication-grade cycle (V1 → CRITIQUE → V2) produces a master report at consultant-briefing voice with verified citations.
 
-The Verifier sub-agent pattern is inspired by [`companion-inc/feynman`](https://github.com/companion-inc/feynman); Titan generalizes it across multi-phase outputs as the always-on Standalone-Readability Lens. See [`plugins/titan-research/references/upstreams.md`](plugins/titan-research/references/upstreams.md) for the full attribution.
+The Verifier sub-agent pattern is inspired by [`companion-inc/feynman`](https://github.com/companion-inc/feynman); Titan generalizes it across multi-phase outputs as the always-on Standalone-Readability Lens. See [`plugins/titan-research/skills/titan-research/references/upstreams.md`](plugins/titan-research/skills/titan-research/references/upstreams.md) for the full attribution.
 
 ## First example
 

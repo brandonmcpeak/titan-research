@@ -7,10 +7,7 @@
     "url": "https://brandonmcpeak.com"
   },
   "license": "MIT",
-  "repository": "github:brandonmcpeak/titan-research",
-  "components": {
-    "skills": [
-      "plugins/titan-research"
-    ]
-  }
+  "repository": "https://github.com/brandonmcpeak/titan-research",
+  "homepage": "https://titanresearchengine.com/",
+  "keywords": ["claude-code", "research", "agent-skills", "deep-research", "llm"]
 }

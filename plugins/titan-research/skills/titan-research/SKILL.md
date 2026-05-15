@@ -279,7 +279,3 @@ Load these on-demand when the corresponding phase activates:
 - Every research run compounds previous knowledge
 - Use `assets/research-brief-template.md` for blank brief skeleton
 - Use `assets/report-output-template.md` for blank report skeleton
-
-## Paired publishing (optional)
-
-If you maintain a paired static research site, see `docs/paired-site-companion.md` for an integration recipe. This is an optional companion; the core protocol does not require it.

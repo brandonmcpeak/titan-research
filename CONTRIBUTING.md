@@ -20,7 +20,7 @@ These are likely to merge:
 
 Before opening a PR:
 - [ ] Read `STABILITY.md` and confirm your change does not request stability
-- [ ] If your change touches `SKILL.md` or any `references/*.md`, run `plugins/titan-research/scripts/acceptance-gates.sh` and confirm pass
+- [ ] If your change touches `SKILL.md` or any `references/*.md`, run `plugins/titan-research/skills/titan-research/scripts/acceptance-gates.sh` and confirm pass
 - [ ] If your change is a new preset, include a fixture run showing the preset producing a valid output
 
 ## Response time
