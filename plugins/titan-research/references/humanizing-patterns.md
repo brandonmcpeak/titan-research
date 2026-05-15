@@ -41,8 +41,14 @@ These phrases are high-frequency AI tells that rarely earn their place in standa
 | it's important to note, it's worth noting, notably | Pre-announces importance that the next clause should demonstrate | Delete the preamble; keep the clause |
 | navigate, journey, landscape (as metaphors) | Worn metaphors | Concrete noun for what's actually meant |
 | Let's dive in, Let me explain, Let me walk you through | Dialogue scaffolding | Delete; just start the explanation |
+| comprehensive | LLM-spike adjective; rarely earns the claim | "complete", "full", or delete |
+| robust | LLM-spike; vague | "reliable", "stable", or specific behavior |
+| tapestry, realm | Worn metaphors | Concrete noun for what's actually meant |
+| throughout this report, as we have seen | Self-referential filler that betrays AI-summary framing | Delete; the reader can navigate the report |
 
 The list grows with each run; add tells you notice repeatedly.
+
+**Publication-grade additions:** the bottom four rows (`comprehensive`, `robust`, `tapestry`/`realm`, `throughout this report`/`as we have seen`) were surfaced by the 2026-05-13 V2 self-critique pass on the claude-design-skill master report. They are extensions to the always-on baseline, applied at synthesis-level (the master report when public-shareable framing is invoked). See `publication-grade-pass.md` for the full discipline.
 
 ## Sentence-Shape Moves
 

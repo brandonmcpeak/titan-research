@@ -179,7 +179,11 @@ findings:
 
 **Why a sub-agent, not orchestrator-internal:**
 
-A fresh-context sub-agent reads the master report without the bias of "I wrote this; it must be fine." This is the Verifier pattern: separate producer from verifier. The sub-agent's lack of conversational context is the point — it catches exactly the scaffolding that the producing orchestrator can no longer see.
+A fresh-context sub-agent reads the master report without the bias of "I wrote this; it must be fine." This is the Verifier pattern: separate producer from verifier. The sub-agent's lack of conversational context is the point. It catches exactly the scaffolding that the producing orchestrator can no longer see.
+
+**Escalation to publication-grade pass:**
+
+The Standalone-Readability Lens is the always-on lighter discipline. When the master report is destined for public-share (paired research site, published essay, client deliverable, external partner) OR when the brief frontmatter has `publication_grade: true`, escalate to the two-pass V1 → CRITIQUE → V2 cycle in `publication-grade-pass.md`. That heavier discipline produces McKinsey-Quarterly / HBR-grade voice; this lighter lens produces "no obvious tells" voice. Pick the discipline by the destination, not by default.
 
 ## Directory Standard
 
@@ -191,16 +195,18 @@ Short version:
 ```
 resources/research/reports/<topic-kebab>_run_<date>/
 ├── README.md                                        # run index
-├── RESEARCH_REPORT_<topic>_master_v1_<date>.md      # master synthesis
-├── RESEARCH_REPORT_<topic>-ph1_v1_<date>.md         # Phase 1 synthesis
-├── RESEARCH_REPORT_<topic>-ph2_v1_<date>.md         # Phase 2 synthesis
-├── ph1/                                             # Phase 1 pillar companions
+├── RESEARCH_REPORT_<topic>_master_v1_<date>.md      # master synthesis (canonical deliverable, root)
+├── ph1/                                             # Phase 1 — phase report nests with its pillar files
+│   ├── RESEARCH_REPORT_<topic>-ph1_v1_<date>.md     # Phase 1 synthesis
 │   ├── P1_<name>.md
 │   └── P2_<name>.md
-└── ph2/                                             # Phase 2 pillar companions
+└── ph2/                                             # Phase 2 — phase report nests with its pillar files
+    ├── RESEARCH_REPORT_<topic>-ph2_v1_<date>.md     # Phase 2 synthesis
     ├── P7_<name>.md
     └── P8_<name>.md
 ```
+
+Phase reports nest under their phase subdir alongside the pillar files they synthesize, not as siblings of master. Master alone sits at root because it is the canonical deliverable; phase reports are intermediate authorities and belong with the pillar files they consolidate. This corrects a prior pattern that placed phase reports as siblings of master, which created visual competition between the canonical artifact and its intermediates.
 
 ## Quality Gates (Multi-Phase Specific)
 
