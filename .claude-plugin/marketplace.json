@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "brandonmcpeak",
+  "description": "Brandon McPeak's personal Claude plugin marketplace",
+  "plugins": [
+    {
+      "name": "titan-research",
+      "source": "brandonmcpeak/titan-research",
+      "path": "plugins/titan-research"
+    }
+  ]
+}

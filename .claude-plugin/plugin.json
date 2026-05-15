@@ -1,0 +1,16 @@
+{
+  "name": "titan-research",
+  "version": "0.1.0",
+  "description": "Multi-phase deep research protocol for Claude Code. Decision-ready intelligence, not topic surveys.",
+  "author": {
+    "name": "Brandon McPeak",
+    "url": "https://brandonmcpeak.com"
+  },
+  "license": "MIT",
+  "repository": "github:brandonmcpeak/titan-research",
+  "components": {
+    "skills": [
+      "plugins/titan-research"
+    ]
+  }
+}

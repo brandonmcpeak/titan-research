@@ -86,7 +86,7 @@ Every subagent prompt MUST encode the following output discipline:
 
 #### Wikilink Discipline (At Write-Time)
 
-Subagent prompts MUST also instruct the agent: when writing markdown files that reference OTHER markdown files inside the user's Obsidian vault (any path under `/Users/brandonmcpeak/GitHub & Projects/`), use Obsidian wikilink form `[[basename]]` or `[[path/to/basename]]` — NOT `[text](path.md)`. The vault has `alwaysUpdateLinks: true`, so wikilinks survive rename; markdown-style links break. Exceptions: external URLs (`https://...`) and targets outside the vault. See `SKILL.md` Phase 4 → Wikilink Discipline for the full rule.
+Subagent prompts MUST also instruct the agent: when writing markdown files that reference OTHER markdown files inside an Obsidian vault, use Obsidian wikilink form `[[basename]]` or `[[path/to/basename]]` — NOT `[text](path.md)`. Obsidian vaults with `alwaysUpdateLinks: true` keep wikilinks intact across file renames; markdown-style links break. Exceptions: external URLs (`https://...`) and targets outside the vault. See `SKILL.md` Phase 4 → Wikilink Discipline for the full rule.
 
 ### Claude.ai (Extended Search)
 
