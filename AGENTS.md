@@ -1,30 +1,26 @@
-# AGENTS: titan-research (Vault-Root Placement Anomaly)
+# AGENTS: titan-research
 
-## ⚠️ Open System Issue (flag for next chat in this subtree)
+## What this is
 
-**Issue:** titan-research lives at the vault root (`/Users/brandonmcpeak/GitHub & Projects/titan-research/`), outside the `everything/` content container. The vault-root location is reserved for governance, config, and structural files per `/Users/brandonmcpeak/GitHub & Projects/AGENTS.md` "File placement policy" (no ad hoc files at root).
+The public-shareable Claude Code plugin carve-out of the Titan deep-research system, published as `brandonmcpeak/titan-research` on GitHub and installed via `/plugin marketplace add brandonmcpeak/titan-research`.
 
-**Discovered:** 2026-05-20 (cross-repo traversal audit; handoff at `everything/resources/ai-operations-system/handoffs/HANDOFF_traversal-and-handoff-evolution_2026-05-20.md`).
+This repo keeps its own `.git` and GitHub remote. On disk it lives under the AI Operations System's publishing location:
 
-**Context:** titan-research is the public-shareable Claude Code plugin carve-out, published as `brandonmcpeak/titan-research` on GitHub and installed via `/plugin marketplace add brandonmcpeak/titan-research`. The build pipeline for the public version landed it at the vault root, which Brandon flagged as an unintended outcome.
+```
+everything/resources/ai-operations-system/published/titan-research/
+```
 
-**Recommended action when next touching this subtree:**
-1. Decide canonical home for the public-shareable carve-out. Candidate paths:
-   - `~/GitHub & Projects/everything/resources/titan-research/` (most consistent with vault content taxonomy)
-   - Outside the vault entirely (allowlist alongside `~/skill-forge` and `~/awesome-claude-skills` per `~/.claude/CLAUDE.md` Canonical Paths section)
-2. Update the build/publish pipeline (the GitHub-publish capability in `everything/resources/ai-operations-system/`) so future carve-outs land at the chosen home, not the vault root.
-3. Move the repo using `git mv` style operations so `.git` history is preserved. Update the GitHub remote URL if necessary.
-4. Remove this flag once resolved.
+per the `published/` on-disk convention (a sibling of `published/prometheus-forge/`). The parent build repo ignores `published/` wholesale so the nested repo cannot foot-gun the parent's index.
 
-## Scope (when resolved)
+> **Placement history (resolved):** This carve-out previously lived at the vault root (`/Users/brandonmcpeak/GitHub & Projects/titan-research/`), flagged as a file-placement anomaly on 2026-05-20. Relocated to the `published/` home on 2026-06-16; the parent `.gitignore` nested-repo boundary and the vault-root `ARCHITECTURE.md` map were updated at the same time. The GitHub remote and `/plugin marketplace` install path are unaffected by the local move.
 
-Once placement is corrected, this AGENTS.md (or its successor at the new location) should document:
-- Public-shareable plugin discipline (LICENSE, CONTRIBUTING, semver per `STABILITY.md`)
-- Cross-link to the build/publish pipeline that produced the carve-out
-- Cross-link to the source skill in `everything/resources/ai-operations-system/`
+## Scope
+
+- **Public-shareable plugin discipline** — `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and semver per `STABILITY.md`. Treat this repo as an external-facing artifact: no private vault paths, client data, or internal-only references in committed content.
+- **Source of truth** — the source skill lives in the AI Operations System at `everything/resources/ai-operations-system/` (and is deployed to `~/.claude/skills/titan-research/`). This published repo is a carve-out of that source, produced by the build/publish pipeline. Changes to research behavior flow source → carve-out, not the reverse.
 
 ## Inherited Governance
 
 - Root safety and Git boundary controls: `/Users/brandonmcpeak/GitHub & Projects/AGENTS.md`
 - Vault-wide content taxonomy: `/Users/brandonmcpeak/GitHub & Projects/everything/ARCHITECTURE.md`
-- Cross-repo traversal map: `/Users/brandonmcpeak/GitHub & Projects/ARCHITECTURE.md` (Repository Map section; this anomaly should appear there until resolved)
+- Cross-repo traversal map: `/Users/brandonmcpeak/GitHub & Projects/ARCHITECTURE.md` (Repository Map section)
