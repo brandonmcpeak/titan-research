@@ -10,7 +10,7 @@ This repo keeps its own `.git` and GitHub remote. On disk it lives under the AI 
 everything/resources/ai-operations-system/published/titan-research/
 ```
 
-per the `published/` on-disk convention (a sibling of `published/prometheus-forge/`). The parent build repo ignores `published/` wholesale so the nested repo cannot foot-gun the parent's index.
+per the `published/` on-disk convention (a sibling of `published/forge/`). The parent build repo ignores `published/` wholesale so the nested repo cannot foot-gun the parent's index.
 
 > **Placement history (resolved):** This carve-out previously lived at the vault root (`/Users/brandonmcpeak/GitHub & Projects/titan-research/`), flagged as a file-placement anomaly on 2026-05-20. Relocated to the `published/` home on 2026-06-16; the parent `.gitignore` nested-repo boundary and the vault-root `ARCHITECTURE.md` map were updated at the same time. The GitHub remote and `/plugin marketplace` install path are unaffected by the local move.
 
